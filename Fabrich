@@ -1,0 +1,83 @@
+<?php
+
+
+
+
+class carFactory {
+
+    public function __construct() {
+        // ... //
+    }
+
+    public static function build ($type = '') {
+
+
+            $className = ucfirst($type);
+
+            return new $className();
+    }
+
+
+}
+
+class Sedan {
+
+    public function __construct() {
+       echo "<html><div class='Sedan'>baa</div><html>";
+    }
+
+}
+
+
+class Suv {
+
+    public function __construct() {
+        echo "<html><div class='Suv'>baa</div><html>";
+    }
+
+}
+class Luxury {
+
+    public function __construct() {
+        echo "<html><div class='Luxury'>baa</div><html>";
+    }
+
+}
+// Создаём новый Sedan
+$sedan = carFactory::build('sedan');
+
+// Создаём новый SUV
+$suv = carFactory::build('suv');
+
+
+
+// Создаём новый Luxury
+$luxury = carFactory::build('luxury');
+?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Task4</title>
+  </head>
+  <style>
+  .Sedan{
+    background-color:black;
+    width:200px;
+    height:200px;
+  }
+  .Suv{
+    background-color:orange;
+    width:200px;
+    height:200px;
+  }
+  .Luxury{
+    background-color:brown;
+    width:200px;
+    height:200px;
+  }
+  </style>
+  <body>
+
+  </body>
+</html>
